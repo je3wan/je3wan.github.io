@@ -1,0 +1,171 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #2d2d2d;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ff7f;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #87ceeb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover, nav a.active {
+    color: #00ff7f;
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+.hero {
+    padding: 2rem 1rem;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #00ff7f;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.github-link {
+    margin-top: 1rem;
+}
+
+.github-logo {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.projects {
+    padding: 2rem 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: #2d2d2d;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid #444;
+}
+
+.project-card h2 {
+    color: #87ceeb;
+    margin-bottom: 0.5rem;
+}
+
+.project-link {
+    color: #00ff7f;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.imprint {
+    padding: 2rem 0;
+}
+
+.imprint h1, .imprint h2 {
+    margin-bottom: 1rem;
+    color: #00ff7f;
+}
+
+.imprint p {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2d2d;
+    color: #87ceeb;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Ensure content doesn't overlap footer */
+main {
+    padding-bottom: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .nav-brand {
+        margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
