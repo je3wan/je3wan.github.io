@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get the App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f0ece3;
+      --accent: #f5e642;
+      --btn-h: 72px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'DM Mono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(240,236,227,0.35);
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      padding: 0 40px;
+      height: var(--btn-h);
+      background: var(--accent);
+      color: #0a0a0a;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.18s ease;
+      box-shadow: 0 0 0 0 rgba(245,230,66,0);
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid var(--accent);
+      transform: translate(6px, 6px);
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none;
+    }
+
+    .btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 0 0 40px 0 rgba(245,230,66,0.18);
+    }
+
+    .btn:hover::after {
+      transform: translate(9px, 9px);
+    }
+
+    .btn:active {
+      transform: translate(0px, 0px);
+    }
+
+    .btn:active::after {
+      transform: translate(6px, 6px);
+    }
+
+    /* Arrow icon */
+    .btn svg {
+      flex-shrink: 0;
+      transition: transform 0.18s ease;
+    }
+
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    .sub {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(240,236,227,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="eyebrow">Epic Games Store</span>
+
+    <a
+      class="btn"
+      href="marketplace-kit://install?alternativeDistributionPackage=https%3A%2F%2Fstore.epicgames.com%2FiOS%2FOrg%2Fo-5peactypc7y24yvvszgc2nzcw37ejn%2Fee6b47df8b6b497d976fba69865d67cd%2F97068ed8d180458ea831bc9298830753%2Fef2f925a-1e9b-4673-b225-7c69f68f0ebe&installVerificationToken=eyJraWQiOiJlOWJkNTQzMi0zOTBmLTRlODktYTEyYy04YmU2MGNiZjg1NDQiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJhdWQiOiJBcHBsZURvd25sb2FkVmVyaWZpY2F0aW9uLXYxIiwiaXNzIjoiNjQ5NzQwNTgzOCIsImR0eXBlIjoiZG93bmxvYWQiLCJleHAiOjE3ODAwNjE1NTMsImJpZCI6ImNvbS5lcGljZ2FtZXMuc3RvcmUiLCJpYXQiOjE3ODAwNjEyNTMsIm5vbmNlIjoiZWE2NTQzMzItYzQ2My00NjdlLTg5ZmItOGQ5ZWZiOWM3MGY3In0.UeJtk49B8r38uzQy55noy2-Xsh44SgRU_laJjo-rmIPfVgu7IbKxgM5YdNmKh0kUZ5z19reis5r12uhd0HTAmg&appShareURL=https%3A%2F%2Fstore.epicgames.com%2Fdownload%2Fios%3Futm_source%3Depic_appshare%26utm_campaign%3Degs_share"
+    >
+      Install Now
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H15M15 9L10 4M15 9L10 14" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <span class="sub">iOS · Marketplace Kit</span>
+  </div>
+</body>
+</html>
